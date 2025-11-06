@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Working Championship (WWC)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <img src="wwc-logo.jpg" alt="WWC Logo" class="logo-small">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">O lize</a></li>
+                <li><a href="#disciplines">Disciplíny</a></li>
+                <li><a href="#athletes">Atleti</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="hero">
+            <img src="wwc-logo.jpg" alt="World Working Championship Logo" class="hero-logo">
+            <h1 class="tagline">Where others work — we compete.</h1>
+            <p class="tagline-cs">„Kde ostatní pracují, my soutěžíme.“</p>
+            <div class="cta-socials">
+                <a href="#" class="cta-button">Sledujte živě na YouTube</a>
+                <a href="#" class="social-link">TikTok</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2 class="section-title">Standardizujeme svět lidské práce.</h2>
+            <p>
+                WWC je globální sportovně-zábavní liga, která povyšuje běžnou lidskou práci na úroveň sportovní soutěže. Soutěžící závodí v humorných, ale realisticky pojatých disciplínách ve formátu profesionální sportovní ligy.
+            </p>
+            <p class="mission">
+                „Protože i mytí nádobí může být sport.“
+            </p>
+        </section>
+
+        <section id="disciplines" class="content-section">
+            <h2 class="section-title">Oficiální disciplíny</h2>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h3>Dish Dash</h3>
+                    <p>Mytí nádobí na čas a čistotu.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Plastic Bag Endurance</h3>
+                    <p>Nošení plných igelitek na vzdálenost.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Hammer Precision</h3>
+                    <p>Zatloukání hřebíků na čas a přesnost.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Floor Sprint</h3>
+                    <p>Vytírání / vysávání definované zóny.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="athletes" class="content-section">
+            <h2 class="section-title">Hvězdy ligy</h2>
+            <p>(Zde budou profily atletů...)</p>
+            </section>
+        
+        <section id="highlights" class="content-section">
+            <h2 class="section-title">Highlights: Prague Season 2025</h2>
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <span>YouTube Video Embed (16:9)</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <h2 class="section-title">Zapojte se</h2>
+            <p>WWC je otevřená platforma. Hledáme nové talenty, partnery a mediální spolupráce.</p>
+            <div class="contact-links">
+                <a href="mailto:media@wwc.com" class="contact-button">Média & Tisk</a>
+                <a href="mailto:sponsors@wwc.com" class="contact-button">Sponzoři</a>
+                <a href="mailto:casting@wwc.com" class="contact-button">Chci soutěžit</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; <span id="year"></span> World Working Championship. Všechna práva vyhrazena.</p>
+        <div class="footer-socials">
+            <a href="#">YouTube</a> | <a href="#">Instagram</a> | <a href="#">TikTok</a> | <a href="#">X (Twitter)</a>
+        </div>
+    </footer>
+
+    <script>
+        // Malý skript pro automatické doplnění roku v patičce
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
