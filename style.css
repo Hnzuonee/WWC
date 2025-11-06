@@ -177,10 +177,9 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* <<< ZMĚNA: Posun nahoru */
-    text-align: center;
-    min-height: 70vh; /* <<< ZMĚNA: Snížení výšky */
-    padding: 7rem 1.5rem 2rem 1.5rem; /* <<< ZMĚNA: Větší horní padding (kvůli fixed headeru) a menší spodní */
+    justify-content: flex-start;
+    min-height: 60vh; /* <<< ZMĚNA: Menší výška pro menší mezeru */
+    padding: 6rem 1.5rem 2rem 1.5rem; /* <<< ZMĚNA: Menší horní padding */
     background: radial-gradient(circle at 50% 50%, rgba(30, 0, 40, 0.5), var(--color-graphite) 75%);
     position: relative;
     overflow: hidden;
@@ -253,16 +252,14 @@ a {
 
 /* ===== SEKCE (Obecné) ===== */
 .content-section {
-    padding: 3rem 1.5rem; /* <<< ZMĚNA: Větší padding pro rozestupy */
+    padding: 3rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    background-color: transparent; /* <<< ZMĚNA: Pozadí sekce je průhledné */
-    border-bottom: 1px solid var(--color-border); /* <<< ZMĚNA: Jemná linka */
+    background-color: transparent;
+    border-bottom: 1px solid var(--color-border);
     position: relative;
 }
-
-/* ODSTRANĚNO: pravidlo nth-child(even) */
 
 .content-section:last-of-type {
     border-bottom: none;
@@ -280,15 +277,15 @@ a {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem; /* ZVĚTŠENO */
-    margin-top: 2rem; /* ZVĚTŠENO */
+    gap: 1.5rem;
+    margin-top: 2rem;
     text-align: left;
 }
 
 .grid-item {
-    background: var(--color-card-bg); /* <<< ZMĚNA: Světlejší pozadí karty */
+    background: var(--color-card-bg);
     border: 1px solid var(--color-border);
-    padding: 1.5rem; /* ZVĚTŠENO */
+    padding: 1.5rem;
     border-radius: 8px;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     position: relative;
@@ -325,7 +322,7 @@ a {
     transform: translateY(-5px);
     border-color: var(--color-primary-red);
     box-shadow: 0 0 20px rgba(228, 28, 28, 0.5);
-    background: #2a2a2a; /* ZMĚNA: Světlejší hover */
+    background: #2a2a2a;
 }
 .grid-item h3 {
     background: var(--gradient-brand);
@@ -342,11 +339,11 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    margin-top: 2rem; /* ZVĚTŠENO */
+    margin-top: 2rem;
 }
 
 .athlete-card {
-    background: var(--color-card-bg); /* <<< ZMĚNA: Světlejší pozadí karty */
+    background: var(--color-card-bg);
     border: 1px solid var(--color-border);
     border-radius: 10px;
     padding: 1.5rem;
@@ -360,12 +357,12 @@ a {
     transform: translateY(-8px);
     box-shadow: 0 0 30px rgba(201, 62, 255, 0.6);
     border-color: var(--color-magenta);
-    background: #2a2a2a; /* ZMĚNA: Světlejší hover */
+    background: #2a2a2a;
 }
 
 .athlete-photo-container {
-    width: 140px;
-    height: 140px;
+    width: 180px; /* <<< ZMĚNA: ZVĚTŠENÍ FOTEK ATLETŮ */
+    height: 180px; /* <<< ZMĚNA: ZVĚTŠENÍ FOTEK ATLETŮ */
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 0.8rem auto;
@@ -426,7 +423,7 @@ a {
     height: 0;
     overflow: hidden;
     max-width: 800px;
-    margin: 2rem auto; /* ZVĚTŠENO */
+    margin: 2rem auto;
     background: #000;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(228, 28, 28, 0.5);
@@ -459,7 +456,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem; /* Větší mezery mezi logy */
     margin-top: 2rem;
 }
 
@@ -467,20 +464,21 @@ a {
     background: var(--color-card-bg);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 1.5rem;
-    flex-basis: 200px;
-    height: 100px;
+    padding: 2rem; /* <<< ZMĚNA: VĚTŠÍ PADDING PRO VĚTŠÍ KARTY PARTNERŮ */
+    flex-basis: 220px; /* <<< ZMĚNA: VĚTŠÍ ZÁKLADNÍ ŠÍŘKA */
+    height: 120px; /* <<< ZMĚNA: VĚTŠÍ VÝŠKA */
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .partner-item img {
     max-width: 100%;
     height: auto;
-    max-height: 50px; /* Snížení výšky loga */
-    filter: grayscale(100%) brightness(0.7); /* Ztmavení pro "premium" vzhled */
+    max-height: 80px; /* <<< ZMĚNA: ZVĚTŠENÍ VÝŠKY LOGA */
+    filter: grayscale(100%) brightness(0.7);
     opacity: 0.6;
     transition: filter 0.3s ease, opacity 0.3s ease;
 }
@@ -492,7 +490,7 @@ a {
 }
 
 .partner-item:hover img {
-    filter: grayscale(0%) brightness(1); /* Plná barva na hover */
+    filter: grayscale(0%) brightness(1);
     opacity: 1;
 }
 
@@ -502,7 +500,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem; /* ZVĚTŠENO */
+    gap: 1rem;
 }
 
 .contact-button {
@@ -527,7 +525,7 @@ a {
 
 /* ===== PATIČKA ===== */
 .main-footer {
-    padding: 1.5rem; /* ZVĚTŠENO */
+    padding: 1.5rem;
     text-align: center;
     border-top: 1px solid var(--color-border);
     color: var(--color-silver);
@@ -535,7 +533,7 @@ a {
 }
 
 .footer-socials {
-    margin-top: 0.8rem; /* ZVĚTŠENO */
+    margin-top: 0.8rem;
 }
 
 .footer-socials a {
@@ -572,12 +570,12 @@ a {
         justify-content: center;
     }
     .nav-menu li {
-        margin: 0.4rem 0.6rem; /* ZÚŽENO pro 5 položek */
+        margin: 0.4rem 0.6rem;
     }
     
     #hero {
-        padding-top: 10rem; /* Větší padding na mobilu, protože nav je vyšší */
-        min-height: 80vh; /* Na mobilu necháme vyšší */
+        padding-top: 8rem; /* <<< ZMĚNA: Menší padding pro mobil */
+        min-height: 70vh; /* <<< ZMĚNA: Vyšší výška na mobilu */
     }
     
     h1.tagline {
@@ -606,6 +604,14 @@ a {
     .content-section {
         padding: 2rem 1rem;
     }
+    .partner-item {
+        flex-basis: 180px; /* Zmenšení na tabletu */
+        padding: 1.5rem;
+        height: 100px;
+    }
+    .partner-item img {
+        max-height: 60px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -614,7 +620,7 @@ a {
     }
     
     #hero {
-        padding-top: 8rem; /* Snížení pro menší mobily */
+        padding-top: 7rem; /* <<< ZMĚNA: Snížení pro menší mobily */
     }
     
     h1.tagline {
@@ -630,15 +636,20 @@ a {
         grid-template-columns: 1fr;
     }
     .athlete-photo-container {
-        width: 120px;
-        height: 120px;
+        width: 150px; /* <<< ZMĚNA: Větší i na mobilu */
+        height: 150px; /* <<< ZMĚNA: Větší i na mobilu */
     }
     .partners-grid {
-        grid-template-columns: 1fr 1fr; /* Dva partneři na řádek */
+        grid-template-columns: 1fr; /* Jeden partner na řádek na malých mobilech */
         gap: 1rem;
     }
     .partner-item {
-        flex-basis: 150px;
-        padding: 1rem;
+        flex-basis: 90%; /* Zvětšit na šířku */
+        max-width: 250px; /* Limit pro maximální šířku */
+        padding: 1.5rem;
+        height: 90px;
+    }
+    .partner-item img {
+        max-height: 50px;
     }
 }
