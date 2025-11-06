@@ -3,14 +3,15 @@
     --color-primary-red: #E41C1C;
     --color-magenta: #C93EFF;
     --color-graphite: #0E0E0E;
+    --color-card-bg: #1A1A1A; /* <<< SVĚTLEJŠÍ POZADÍ KARET */
     --color-silver: #C0C0C0;
     --color-white: #FFFFFF;
     
     /* Gradienty */
     --gradient-orange-red: linear-gradient(90deg, #FF5E3A 0%, #FF1E56 100%);
     --gradient-brand: linear-gradient(90deg, var(--color-primary-red) 0%, var(--color-magenta) 100%);
-    --gradient-neon-blue: linear-gradient(90deg, #00C6FF 0%, #0072FF 100%); /* Nový akcent */
-    --gradient-neon-green: linear-gradient(90deg, #2EDC2E 0%, #009900 100%); /* Nový akcent */
+    --gradient-neon-blue: linear-gradient(90deg, #00C6FF 0%, #0072FF 100%);
+    --gradient-neon-green: linear-gradient(90deg, #2EDC2E 0%, #009900 100%);
 
     /* Fonty */
     --font-heading: 'Bebas Neue', sans-serif;
@@ -39,7 +40,7 @@ body {
     background-color: var(--color-graphite);
     color: var(--color-white);
     line-height: 1.6;
-    overflow-x: hidden; /* Zabrání horizontálnímu scrollu */
+    overflow-x: hidden;
 }
 
 /* ===== TYPOGRAFIE ===== */
@@ -47,11 +48,11 @@ h1, h2, h3, h4, h5 {
     font-family: var(--font-heading);
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-weight: 700; /* Bebas Neue je často jen bold */
+    font-weight: 700;
 }
 
 h1.tagline {
-    font-size: 3rem; /* Zmenšeno */
+    font-size: 3rem;
     color: var(--color-white);
     text-shadow: var(--shadow-text);
     animation: textFadeIn 1.5s ease-out forwards;
@@ -59,23 +60,23 @@ h1.tagline {
 
 p.tagline-cs {
     font-family: var(--font-subheading);
-    font-size: 1rem; /* Zmenšeno */
+    font-size: 1rem;
     color: var(--color-silver);
-    margin-bottom: 1.5rem; /* Zmenšeno */
+    margin-bottom: 1.5rem;
     animation: textFadeIn 1.8s ease-out forwards;
 }
 
 h2.section-title {
-    font-size: 2.5rem; /* Zmenšeno */
+    font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 1.5rem; /* Zmenšeno */
+    margin-bottom: 1.5rem;
     display: inline-block;
-    padding-bottom: 8px; /* Zmenšeno */
-    border-bottom: 3px solid; /* Zmenšeno */
+    padding-bottom: 8px;
+    border-bottom: 3px solid;
     border-image: var(--gradient-brand) 1;
-    position: relative; /* Pro pseudo-element */
+    position: relative;
 }
-h2.section-title::after { /* Drobné "jiskření" podtržítka */
+h2.section-title::after {
     content: '';
     position: absolute;
     bottom: -1px;
@@ -90,16 +91,16 @@ h2.section-title::after { /* Drobné "jiskření" podtržítka */
 
 h3 {
     font-family: var(--font-subheading);
-    font-size: 1.5rem; /* Zmenšeno */
+    font-size: 1.5rem;
     color: var(--color-white);
     margin-bottom: 0.5rem;
 }
 
 p {
-    font-size: 1rem; /* Zmenšeno */
+    font-size: 1rem;
     color: var(--color-silver);
-    max-width: 600px; /* Zmenšeno */
-    margin: 0 auto 0.8rem auto; /* Zmenšeno */
+    max-width: 600px;
+    margin: 0 auto 0.8rem auto;
 }
 
 a {
@@ -109,9 +110,9 @@ a {
 
 /* ===== HEADER & NAV ===== */
 .main-header {
-    background-color: rgba(14, 14, 14, 0.9); /* Více neprůhledné */
-    backdrop-filter: blur(8px); /* Jemnější blur */
-    border-bottom: 1px solid rgba(192, 192, 192, 0.15); /* Jemnější linka */
+    background-color: rgba(14, 14, 14, 0.9);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(192, 192, 192, 0.15);
     position: fixed;
     width: 100%;
     top: 0;
@@ -124,11 +125,11 @@ a {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0.5rem 1.5rem; /* Zmenšeno */
+    padding: 0.5rem 1.5rem;
 }
 
 .logo-small {
-    height: 40px; /* Zmenšeno */
+    height: 40px;
 }
 
 .nav-menu {
@@ -137,28 +138,28 @@ a {
 }
 
 .nav-menu li {
-    margin-left: 1.5rem; /* Zmenšeno */
+    margin-left: 1.5rem;
 }
 
 .nav-menu a {
     font-family: var(--font-subheading);
     color: var(--color-silver);
     text-decoration: none;
-    font-size: 0.85rem; /* Zmenšeno */
+    font-size: 0.85rem;
     text-transform: uppercase;
     transition: color 0.3s ease, text-shadow 0.3s ease;
     position: relative;
-    padding-bottom: 5px; /* Pro efekt podtržení */
+    padding-bottom: 5px;
 }
 
-.nav-menu a::after { /* Animované podtržení */
+.nav-menu a::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0;
     height: 2px;
-    background: var(--gradient-neon-blue); /* Nová barva pro dynamiku */
+    background: var(--gradient-neon-blue);
     transition: width 0.3s ease-out;
 }
 .nav-menu a:hover::after {
@@ -166,7 +167,7 @@ a {
 }
 .nav-menu a:hover {
     color: var(--color-white);
-    text-shadow: 0 0 8px var(--color-neon-blue); /* Jemný neonový glow */
+    text-shadow: 0 0 8px var(--color-neon-blue);
 }
 
 /* ===== HERO SEKCE ===== */
@@ -176,14 +177,13 @@ a {
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 90vh; /* Zmenšeno */
-    padding: 5rem 1.5rem 1.5rem 1.5rem; /* Zmenšeno */
-    background: radial-gradient(circle at 50% 50%, rgba(30, 0, 40, 0.4), var(--color-graphite) 75%); /* Jemnější gradient */
+    min-height: 90vh;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+    background: radial-gradient(circle at 50% 50%, rgba(30, 0, 40, 0.4), var(--color-graphite) 75%);
     position: relative;
-    overflow: hidden; /* Pro animované pozadí */
+    overflow: hidden;
 }
 
-/* Animované pozadí (jemné částice/světla) */
 #hero::before {
     content: '';
     position: absolute;
@@ -203,44 +203,44 @@ a {
 }
 
 .hero-logo {
-    max-width: 300px; /* Zmenšeno */
-    margin-bottom: 1rem; /* Zmenšeno */
+    max-width: 300px;
+    margin-bottom: 1rem;
     animation: logoPop 1s ease-out forwards;
 }
 
 /* ===== TLAČÍTKA A CTA ===== */
 .cta-button {
     font-family: var(--font-heading);
-    font-size: 1.2rem; /* Zmenšeno */
+    font-size: 1.2rem;
     letter-spacing: 1px;
     text-decoration: none;
     color: var(--color-white);
     background: var(--gradient-orange-red);
-    padding: 0.6rem 2rem; /* Zmenšeno */
+    padding: 0.6rem 2rem;
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     display: inline-block;
-    margin: 0.8rem 0; /* Zmenšeno */
-    box-shadow: 0 0 10px rgba(255, 94, 58, 0.4); /* Jemný glow */
+    margin: 0.8rem 0;
+    box-shadow: 0 0 10px rgba(255, 94, 58, 0.4);
 }
 
 .cta-button:hover {
-    transform: translateY(-3px) scale(1.02); /* Mírný posun nahoru a zvětšení */
-    box-shadow: 0 0 25px rgba(228, 28, 28, 0.7); /* Výraznější glow */
-    background: var(--gradient-brand); /* Změna gradientu při hoveru */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 25px rgba(228, 28, 28, 0.7);
+    background: var(--gradient-brand);
 }
 
 .cta-socials {
     margin-top: 1rem;
     display: flex;
-    gap: 1.5rem; /* Mezera mezi linky */
+    gap: 1.5rem;
     align-items: center;
 }
 
 .social-link {
     font-family: var(--font-subheading);
     color: var(--color-silver);
-    font-size: 0.9rem; /* Zmenšeno */
+    font-size: 0.9rem;
     position: relative;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
@@ -251,46 +251,46 @@ a {
 
 /* ===== SEKCE (Obecné) ===== */
 .content-section {
-    padding: 3rem 1.5rem; /* Zmenšeno */
+    padding: 3rem 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    border-bottom: 1px solid rgba(192, 192, 192, 0.08); /* Jemnější linka */
-    position: relative; /* Pro potenciální animace */
+    border-bottom: 1px solid rgba(192, 192, 192, 0.08);
+    position: relative;
 }
 
 .content-section:last-of-type {
-    border-bottom: none; /* Poslední sekce bez spodní linky */
+    border-bottom: none;
 }
 
 .mission {
     font-family: var(--font-subheading);
-    font-size: 1.2rem; /* Zmenšeno */
+    font-size: 1.2rem;
     color: var(--color-white);
-    margin-top: 1.5rem; /* Zmenšeno */
+    margin-top: 1.5rem;
     text-shadow: var(--shadow-text);
 }
 
 /* ===== GRID (Disciplíny) ===== */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Zmenšeno min-width */
-    gap: 1rem; /* Zmenšeno */
-    margin-top: 2rem; /* Zmenšeno */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem; /* ZVÝŠENO PRO LEPŠÍ ROZESTUPY */
+    margin-top: 2rem;
     text-align: left;
 }
 
 .grid-item {
-    background: rgba(255, 255, 255, 0.03); /* Lehce odlišené pozadí */
-    border: 1px solid rgba(192, 192, 192, 0.1); /* Jemnější border */
-    padding: 1.5rem; /* Zmenšeno */
+    background: var(--color-card-bg); /* <<< ZMĚNA: Světlejší pozadí */
+    border: 1px solid rgba(192, 192, 192, 0.15); /* ZVÝRAZNĚNÍ */
+    padding: 1.5rem;
     border-radius: 8px;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     position: relative;
     overflow: hidden;
 }
 
-.grid-item::before { /* Neonový rámeček při hoveru */
+.grid-item::before {
     content: '';
     position: absolute;
     top: 0;
@@ -305,7 +305,7 @@ a {
     mask-composite: exclude;
     opacity: 0;
     transition: opacity 0.3s ease;
-    pointer-events: none; /* Aby neblokoval klikání */
+    pointer-events: none;
     box-shadow: var(--shadow-neon-red);
 }
 
@@ -316,17 +316,18 @@ a {
 
 
 .grid-item:hover {
-    transform: translateY(-8px); /* Výraznější posun */
-    border-color: var(--color-primary-red); /* Primární barva při hoveru */
-    box-shadow: 0 0 15px rgba(228, 28, 28, 0.3); /* Jemný stín */
+    transform: translateY(-8px);
+    border-color: var(--color-primary-red);
+    box-shadow: 0 0 15px rgba(228, 28, 28, 0.3);
+    background: #222222; /* <<< ZMĚNA: Mírné zesvětlení při hoveru */
 }
 .grid-item h3 {
     background: var(--gradient-brand);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    color: transparent; /* Fallback pro prohlížeče bez background-clip */
-    display: inline-block; /* Aby gradient fungoval */
+    color: transparent;
+    display: inline-block;
     text-shadow: 0 0 5px rgba(255,255,255,0.2);
 }
 
@@ -339,19 +340,20 @@ a {
 }
 
 .athlete-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(192, 192, 192, 0.1);
+    background: var(--color-card-bg); /* <<< ZMĚNA: Světlejší pozadí */
+    border: 1px solid rgba(192, 192, 192, 0.15); /* ZVÝRAZNĚNÍ */
     border-radius: 10px;
     padding: 1.5rem;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    overflow: hidden; /* Pro správné zaoblení obrázku */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    overflow: hidden;
 }
 
 .athlete-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(201, 62, 255, 0.5); /* Neon magenta glow */
+    box-shadow: 0 0 30px rgba(201, 62, 255, 0.5);
     border-color: var(--color-magenta);
+    background: #222222; /* <<< ZMĚNA: Mírné zesvětlení při hoveru */
 }
 
 .athlete-photo-container {
@@ -360,7 +362,7 @@ a {
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 1rem auto;
-    border: 3px solid var(--color-primary-red); /* Barevný rámeček kolem fotky */
+    border: 3px solid var(--color-primary-red);
     box-shadow: 0 0 15px rgba(228, 28, 28, 0.4);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -389,14 +391,14 @@ a {
 .athlete-card p {
     font-size: 0.95rem;
     margin-bottom: 1rem;
-    max-width: none; /* Aby se text neroztahoval zbytečně */
+    max-width: none;
 }
 
 .profile-link {
     font-family: var(--font-subheading);
     font-size: 0.9rem;
     color: var(--color-white);
-    background: var(--gradient-neon-blue); /* Nový gradient pro tlačítko */
+    background: var(--gradient-neon-blue);
     padding: 0.5rem 1rem;
     border-radius: 4px;
     display: inline-block;
@@ -406,26 +408,26 @@ a {
 .profile-link:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 114, 255, 0.7);
-    background: var(--gradient-neon-green); /* Jiný gradient pro hover */
+    background: var(--gradient-neon-green);
 }
 
 
 /* ===== VIDEO HIGHLIGHTS ===== */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%; /* 16:9 */
     height: 0;
     overflow: hidden;
-    max-width: 900px; /* Zmenšeno */
-    margin: 2rem auto; /* Zmenšeno */
+    max-width: 900px;
+    margin: 2rem auto;
     background: #000;
-    border-radius: 8px; /* Zaoblené rohy */
-    box-shadow: 0 0 30px rgba(228, 28, 28, 0.5); /* Výraznější stín */
-    border: 2px solid var(--color-primary-red); /* Rámeček */
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(228, 28, 28, 0.5);
+    border: 2px solid var(--color-primary-red);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 .video-container:hover {
-    box-shadow: 0 0 45px rgba(201, 62, 255, 0.7); /* Změna stínu při hoveru */
+    box-shadow: 0 0 45px rgba(201, 62, 255, 0.7);
     border-color: var(--color-magenta);
 }
 
@@ -441,33 +443,33 @@ a {
     border: 2px dashed var(--color-silver);
     color: var(--color-silver);
     font-family: var(--font-subheading);
-    border-radius: 8px; /* Pro vnitřní zaoblení */
+    border-radius: 8px;
 }
 
 /* ===== KONTAKT ===== */
 .contact-links {
-    margin-top: 2rem; /* Zmenšeno */
+    margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem; /* Zmenšeno */
+    gap: 1rem;
 }
 
 .contact-button {
     font-family: var(--font-subheading);
-    font-size: 0.9rem; /* Zmenšeno */
+    font-size: 0.9rem;
     color: var(--color-white);
     border: 2px solid var(--color-silver);
-    padding: 0.6rem 1.2rem; /* Zmenšeno */
+    padding: 0.6rem 1.2rem;
     border-radius: 5px;
     transition: all 0.3s ease;
     box-shadow: 0 0 5px rgba(192, 192, 192, 0.2);
 }
 
 .contact-button:hover {
-    background: var(--gradient-neon-green); /* Nový gradient pro kontakt */
+    background: var(--gradient-neon-green);
     color: var(--color-white);
-    border-color: var(--color-neon-green);
+    border-color: transparent; /* Skryjeme border, když je tam gradient */
     transform: translateY(-2px);
     box-shadow: 0 0 15px rgba(46, 220, 46, 0.6);
 }
@@ -475,20 +477,20 @@ a {
 
 /* ===== PATIČKA ===== */
 .main-footer {
-    padding: 1.5rem; /* Zmenšeno */
+    padding: 1.5rem;
     text-align: center;
-    border-top: 1px solid rgba(192, 192, 192, 0.08); /* Jemnější linka */
+    border-top: 1px solid rgba(192, 192, 192, 0.08);
     color: var(--color-silver);
-    font-size: 0.8rem; /* Zmenšeno */
+    font-size: 0.8rem;
 }
 
 .footer-socials {
-    margin-top: 0.8rem; /* Zmenšeno */
+    margin-top: 0.8rem;
 }
 
 .footer-socials a {
     color: var(--color-silver);
-    margin: 0 0.4rem; /* Zmenšeno */
+    margin: 0 0.4rem;
 }
 .footer-socials a:hover {
     color: var(--color-primary-red);
@@ -506,7 +508,7 @@ a {
     to { transform: scale(1); opacity: 1; }
 }
 
-/* Media Queries pro responzivitu */
+/* ===== RESPONZIVITA ===== */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
