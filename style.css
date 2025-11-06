@@ -2,9 +2,9 @@
 :root {
     --color-primary-red: #E41C1C;
     --color-magenta: #C93EFF;
-    --color-dark-grey: #1E1E1E; /* <<< ZESVĚTLENO Z GRAPHITE */
-    --color-mid-grey: #2A2A2A; /* <<< NOVÁ BARVA PRO POZADÍ KARET A SEKCÍ */
-    --color-light-grey: #444444; /* Pro jemné okraje nebo text */
+    --color-graphite: #0E0E0E; /* <<< ZÁKLADNÍ POZADÍ */
+    --color-card-bg: #1A1A1A; /* <<< SVĚTLEJŠÍ POZADÍ PRO KARTY */
+    --color-border: #2A2A2A; /* <<< JEMNÝ OKRAJ */
     --color-silver: #C0C0C0;
     --color-white: #FFFFFF;
     
@@ -38,7 +38,7 @@ html {
 
 body {
     font-family: var(--font-body);
-    background-color: var(--color-dark-grey); /* <<< ZMĚNA: Tmavě šedé pozadí */
+    background-color: var(--color-graphite); /* <<< ZMĚNA: Tmavé pozadí */
     color: var(--color-white);
     line-height: 1.6;
     overflow-x: hidden;
@@ -63,20 +63,19 @@ p.tagline-cs {
     font-family: var(--font-subheading);
     font-size: 1rem;
     color: var(--color-silver);
-    margin-bottom: 1rem; /* <<< ZMENŠENO */
+    margin-bottom: 1rem;
     animation: textFadeIn 1.8s ease-out forwards;
 }
 
 h2.section-title {
     font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 1rem; /* <<< ZMENŠENO */
+    margin-bottom: 1.5rem; /* ZVĚTŠENO ZPĚT */
     display: inline-block;
     padding-bottom: 8px;
     border-bottom: 3px solid;
     border-image: var(--gradient-brand) 1;
     position: relative;
-    /* Neonový text glow pro nadpisy */
     text-shadow: 0 0 10px rgba(228, 28, 28, 0.4), 0 0 20px rgba(201, 62, 255, 0.4);
 }
 h2.section-title::after {
@@ -113,7 +112,7 @@ a {
 
 /* ===== HEADER & NAV ===== */
 .main-header {
-    background-color: rgba(14, 14, 14, 0.95); /* <<< JESTE VICE NEPRUHLEDNE */
+    background-color: rgba(14, 14, 14, 0.95);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(192, 192, 192, 0.15);
     position: fixed;
@@ -170,7 +169,7 @@ a {
 }
 .nav-menu a:hover {
     color: var(--color-white);
-    text-shadow: 0 0 8px var(--gradient-neon-blue); /* <<< NEON GLOW */
+    text-shadow: 0 0 8px var(--gradient-neon-blue);
 }
 
 /* ===== HERO SEKCE ===== */
@@ -178,11 +177,11 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* <<< ZMĚNA: Posun nahoru */
     text-align: center;
-    min-height: 80vh; /* <<< ZMENŠENO VÝRAZNĚ */
-    padding: 4rem 1.5rem 1.5rem 1.5rem; /* <<< ZMENŠENO */
-    background: radial-gradient(circle at 50% 50%, rgba(30, 0, 40, 0.5), var(--color-dark-grey) 75%); /* <<< JEMNĚJŠÍ A SVĚTLEJŠÍ */
+    min-height: 70vh; /* <<< ZMĚNA: Snížení výšky */
+    padding: 7rem 1.5rem 2rem 1.5rem; /* <<< ZMĚNA: Větší horní padding (kvůli fixed headeru) a menší spodní */
+    background: radial-gradient(circle at 50% 50%, rgba(30, 0, 40, 0.5), var(--color-graphite) 75%);
     position: relative;
     overflow: hidden;
 }
@@ -197,7 +196,7 @@ a {
     background: url('data:image/svg+xml;charset=UTF-8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="%23FF5E3A" opacity="0.15"/><circle cx="20" cy="80" r="0.5" fill="%23C93EFF" opacity="0.12"/><circle cx="80" cy="20" r="0.7" fill="%23E41C1C" opacity="0.13"/></svg>') repeat;
     background-size: 200px;
     animation: moveBackground 60s linear infinite;
-    opacity: 0.4; /* <<< VÍCE VIDITELNÉ */
+    opacity: 0.4;
 }
 
 @keyframes moveBackground {
@@ -207,7 +206,7 @@ a {
 
 .hero-logo {
     max-width: 300px;
-    margin-bottom: 0.8rem; /* <<< ZMENŠENO */
+    margin-bottom: 0.8rem;
     animation: logoPop 1s ease-out forwards;
 }
 
@@ -234,7 +233,7 @@ a {
 }
 
 .cta-socials {
-    margin-top: 0.8rem; /* <<< ZMENŠENO */
+    margin-top: 0.8rem;
     display: flex;
     gap: 1.5rem;
     align-items: center;
@@ -254,18 +253,16 @@ a {
 
 /* ===== SEKCE (Obecné) ===== */
 .content-section {
-    padding: 2.5rem 1.5rem; /* <<< ZMENŠENO */
+    padding: 3rem 1.5rem; /* <<< ZMĚNA: Větší padding pro rozestupy */
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    background-color: var(--color-dark-grey); /* <<< ZESVĚTLENÍ SEKCE */
-    border-bottom: 1px solid var(--color-light-grey); /* <<< SVĚTLEJŠÍ LINKA */
+    background-color: transparent; /* <<< ZMĚNA: Pozadí sekce je průhledné */
+    border-bottom: 1px solid var(--color-border); /* <<< ZMĚNA: Jemná linka */
     position: relative;
 }
 
-.content-section:nth-child(even) { /* Střídavé pozadí pro lepší vizuální oddělení */
-    background-color: var(--color-mid-grey); 
-}
+/* ODSTRANĚNO: pravidlo nth-child(even) */
 
 .content-section:last-of-type {
     border-bottom: none;
@@ -283,20 +280,20 @@ a {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem; /* <<< ZMENŠENO */
-    margin-top: 1.5rem; /* <<< ZMENŠENO */
+    gap: 1.5rem; /* ZVĚTŠENO */
+    margin-top: 2rem; /* ZVĚTŠENO */
     text-align: left;
 }
 
 .grid-item {
-    background: var(--color-mid-grey); /* <<< ZMĚNA: Světlejší pozadí */
-    border: 1px solid var(--color-light-grey); /* <<< SVĚTLEJŠÍ OKRAJ */
-    padding: 1.2rem; /* <<< ZMENŠENO */
+    background: var(--color-card-bg); /* <<< ZMĚNA: Světlejší pozadí karty */
+    border: 1px solid var(--color-border);
+    padding: 1.5rem; /* ZVĚTŠENO */
     border-radius: 8px;
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Jemný 3D efekt */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .grid-item::before {
@@ -325,10 +322,10 @@ a {
 
 
 .grid-item:hover {
-    transform: translateY(-5px); /* <<< JEMNĚJŠÍ POSUN */
+    transform: translateY(-5px);
     border-color: var(--color-primary-red);
-    box-shadow: 0 0 20px rgba(228, 28, 28, 0.5); /* <<< VÝRAZNĚJŠÍ GLOW */
-    background: #3a3a3a; /* <<< ZMĚNA: Mírné zesvětlení při hoveru */
+    box-shadow: 0 0 20px rgba(228, 28, 28, 0.5);
+    background: #2a2a2a; /* ZMĚNA: Světlejší hover */
 }
 .grid-item h3 {
     background: var(--gradient-brand);
@@ -345,33 +342,33 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
-    margin-top: 1.5rem; /* <<< ZMENŠENO */
+    margin-top: 2rem; /* ZVĚTŠENO */
 }
 
 .athlete-card {
-    background: var(--color-mid-grey); /* <<< ZMĚNA: Světlejší pozadí */
-    border: 1px solid var(--color-light-grey); /* <<< SVĚTLEJŠÍ OKRAJ */
+    background: var(--color-card-bg); /* <<< ZMĚNA: Světlejší pozadí karty */
+    border: 1px solid var(--color-border);
     border-radius: 10px;
     padding: 1.5rem;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Jemný 3D efekt */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .athlete-card:hover {
-    transform: translateY(-8px); /* <<< JEMNĚJŠÍ POSUN */
-    box-shadow: 0 0 30px rgba(201, 62, 255, 0.6); /* <<< VÝRAZNĚJŠÍ GLOW */
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(201, 62, 255, 0.6);
     border-color: var(--color-magenta);
-    background: #3a3a3a; /* <<< ZMĚNA: Mírné zesvětlení při hoveru */
+    background: #2a2a2a; /* ZMĚNA: Světlejší hover */
 }
 
 .athlete-photo-container {
-    width: 140px; /* <<< ZMENŠENO */
-    height: 140px; /* <<< ZMENŠENO */
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto 0.8rem auto; /* <<< ZMENŠENO */
+    margin: 0 auto 0.8rem auto;
     border: 3px solid var(--color-primary-red);
     box-shadow: 0 0 15px rgba(228, 28, 28, 0.4);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -399,8 +396,8 @@ a {
 }
 
 .athlete-card p {
-    font-size: 0.9rem; /* <<< ZMENŠENO */
-    margin-bottom: 0.8rem; /* <<< ZMENŠENO */
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
     max-width: none;
 }
 
@@ -428,8 +425,8 @@ a {
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    max-width: 800px; /* <<< ZMENŠENO */
-    margin: 1.5rem auto; /* <<< ZMENŠENO */
+    max-width: 800px;
+    margin: 2rem auto; /* ZVĚTŠENO */
     background: #000;
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(228, 28, 28, 0.5);
@@ -456,20 +453,63 @@ a {
     border-radius: 8px;
 }
 
-/* ===== KONTAKT ===== */
-.contact-links {
-    margin-top: 1.5rem; /* <<< ZMENŠENO */
+/* ===== PARTNERS (NOVÝ STYL) ===== */
+.partners-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.8rem; /* <<< ZMENŠENO */
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.partner-item {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    flex-basis: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.partner-item img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px; /* Snížení výšky loga */
+    filter: grayscale(100%) brightness(0.7); /* Ztmavení pro "premium" vzhled */
+    opacity: 0.6;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.partner-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--shadow-neon-magenta);
+    border-color: var(--color-magenta);
+}
+
+.partner-item:hover img {
+    filter: grayscale(0%) brightness(1); /* Plná barva na hover */
+    opacity: 1;
+}
+
+/* ===== KONTAKT ===== */
+.contact-links {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; /* ZVĚTŠENO */
 }
 
 .contact-button {
     font-family: var(--font-subheading);
     font-size: 0.9rem;
     color: var(--color-white);
-    border: 2px solid var(--color-light-grey); /* <<< SVĚTLEJŠÍ OKRAJ */
+    border: 2px solid var(--color-border);
     padding: 0.6rem 1.2rem;
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -487,15 +527,15 @@ a {
 
 /* ===== PATIČKA ===== */
 .main-footer {
-    padding: 1.2rem; /* <<< ZMENŠENO */
+    padding: 1.5rem; /* ZVĚTŠENO */
     text-align: center;
-    border-top: 1px solid rgba(192, 192, 192, 0.08);
+    border-top: 1px solid var(--color-border);
     color: var(--color-silver);
     font-size: 0.8rem;
 }
 
 .footer-socials {
-    margin-top: 0.6rem; /* <<< ZMENŠENO */
+    margin-top: 0.8rem; /* ZVĚTŠENO */
 }
 
 .footer-socials a {
@@ -522,50 +562,61 @@ a {
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        padding: 0.8rem; /* <<< ZMENŠENO */
+        padding: 0.8rem;
     }
     .navbar-logo {
-        margin-bottom: 0.8rem; /* <<< ZMENŠENO */
+        margin-bottom: 0.8rem;
     }
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
     }
     .nav-menu li {
-        margin: 0.4rem 0.8rem; /* <<< ZMENŠENO */
+        margin: 0.4rem 0.6rem; /* ZÚŽENO pro 5 položek */
     }
+    
+    #hero {
+        padding-top: 10rem; /* Větší padding na mobilu, protože nav je vyšší */
+        min-height: 80vh; /* Na mobilu necháme vyšší */
+    }
+    
     h1.tagline {
-        font-size: 2rem; /* <<< ZMENŠENO */
+        font-size: 2rem;
     }
     h2.section-title {
-        font-size: 1.8rem; /* <<< ZMENŠENO */
+        font-size: 1.8rem;
     }
     .cta-socials {
         flex-direction: column;
-        gap: 0.6rem; /* <<< ZMENŠENO */
+        gap: 0.6rem;
     }
     .cta-button {
-        width: 90%; /* Větší šířka na mobilech */
+        width: 90%;
         max-width: 300px;
-        font-size: 1rem; /* <<< ZMENŠENO */
+        font-size: 1rem;
     }
     .contact-links {
         flex-direction: column;
-        gap: 0.6rem; /* <<< ZMENŠENO */
+        gap: 0.6rem;
     }
     .contact-button {
-        width: 90%; /* Větší šířka na mobilech */
+        width: 90%;
         max-width: 300px;
     }
     .content-section {
-        padding: 2rem 1rem; /* <<< ZMENŠENO */
+        padding: 2rem 1rem;
     }
 }
 
 @media (max-width: 480px) {
     .hero-logo {
-        max-width: 180px; /* <<< ZMENŠENO */
+        max-width: 180px;
     }
+    
+    #hero {
+        padding-top: 8rem; /* Snížení pro menší mobily */
+    }
+    
     h1.tagline {
         font-size: 1.6rem;
     }
@@ -579,7 +630,15 @@ a {
         grid-template-columns: 1fr;
     }
     .athlete-photo-container {
-        width: 120px; /* <<< ZMENŠENO */
-        height: 120px; /* <<< ZMENŠENO */
+        width: 120px;
+        height: 120px;
+    }
+    .partners-grid {
+        grid-template-columns: 1fr 1fr; /* Dva partneři na řádek */
+        gap: 1rem;
+    }
+    .partner-item {
+        flex-basis: 150px;
+        padding: 1rem;
     }
 }
