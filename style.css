@@ -38,7 +38,7 @@ html {
 
 body {
     font-family: var(--font-body);
-    background-color: var(--color-graphite); /* <<< ZMĚNA: Tmavé pozadí */
+    background-color: var(--color-graphite);
     color: var(--color-white);
     line-height: 1.6;
     overflow-x: hidden;
@@ -70,8 +70,16 @@ p.tagline-cs {
 h2.section-title {
     font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 1.5rem; /* ZVĚTŠENO ZPĚT */
-    display: inline-block;
+    margin-bottom: 1.5rem;
+    
+    /* --- ZMĚNA PRO CENTROVÁNÍ --- */
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    /* --- KONEC ZMĚNY --- */
+    
     padding-bottom: 8px;
     border-bottom: 3px solid;
     border-image: var(--gradient-brand) 1;
@@ -178,8 +186,8 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    min-height: 60vh; /* <<< ZMĚNA: Menší výška pro menší mezeru */
-    padding: 6rem 1.5rem 2rem 1.5rem; /* <<< ZMĚNA: Menší horní padding */
+    min-height: 60vh;
+    padding: 6rem 1.5rem 2rem 1.5rem;
     background: radial-gradient(circle at 50% 50%, rgba(30, 0, 40, 0.5), var(--color-graphite) 75%);
     position: relative;
     overflow: hidden;
@@ -361,8 +369,8 @@ a {
 }
 
 .athlete-photo-container {
-    width: 180px; /* <<< ZMĚNA: ZVĚTŠENÍ FOTEK ATLETŮ */
-    height: 180px; /* <<< ZMĚNA: ZVĚTŠENÍ FOTEK ATLETŮ */
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 0.8rem auto;
@@ -456,7 +464,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 2rem; /* Větší mezery mezi logy */
+    gap: 2rem;
     margin-top: 2rem;
 }
 
@@ -464,9 +472,9 @@ a {
     background: var(--color-card-bg);
     border: 1px solid var(--color-border);
     border-radius: 8px;
-    padding: 2rem; /* <<< ZMĚNA: VĚTŠÍ PADDING PRO VĚTŠÍ KARTY PARTNERŮ */
-    flex-basis: 220px; /* <<< ZMĚNA: VĚTŠÍ ZÁKLADNÍ ŠÍŘKA */
-    height: 120px; /* <<< ZMĚNA: VĚTŠÍ VÝŠKA */
+    padding: 2rem;
+    flex-basis: 220px;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -477,7 +485,7 @@ a {
 .partner-item img {
     max-width: 100%;
     height: auto;
-    max-height: 80px; /* <<< ZMĚNA: ZVĚTŠENÍ VÝŠKY LOGA */
+    max-height: 80px;
     filter: grayscale(100%) brightness(0.7);
     opacity: 0.6;
     transition: filter 0.3s ease, opacity 0.3s ease;
@@ -564,18 +572,19 @@ a {
     }
     .navbar-logo {
         margin-bottom: 0.8rem;
+        display: none; /* <<< ZMĚNA: SKRYTÍ LOGA NA MOBILU */
     }
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
     }
     .nav-menu li {
-        margin: 0.4rem 0.6rem;
+        margin: 0.4rem 0.8rem; /* <<< ZMĚNA: VÍCE MÍSTA PRO 4 POLOŽKY */
     }
     
     #hero {
-        padding-top: 8rem; /* <<< ZMĚNA: Menší padding pro mobil */
-        min-height: 70vh; /* <<< ZMĚNA: Vyšší výška na mobilu */
+        padding-top: 8rem;
+        min-height: 70vh;
     }
     
     h1.tagline {
@@ -605,7 +614,7 @@ a {
         padding: 2rem 1rem;
     }
     .partner-item {
-        flex-basis: 180px; /* Zmenšení na tabletu */
+        flex-basis: 180px;
         padding: 1.5rem;
         height: 100px;
     }
@@ -620,7 +629,7 @@ a {
     }
     
     #hero {
-        padding-top: 7rem; /* <<< ZMĚNA: Snížení pro menší mobily */
+        padding-top: 7rem;
     }
     
     h1.tagline {
@@ -636,17 +645,16 @@ a {
         grid-template-columns: 1fr;
     }
     .athlete-photo-container {
-        width: 150px; /* <<< ZMĚNA: Větší i na mobilu */
-        height: 150px; /* <<< ZMĚNA: Větší i na mobilu */
+        width: 150px;
+        height: 150px;
     }
     .partners-grid {
-        grid-template-columns: 1fr; /* Jeden partner na řádek na malých mobilech */
+        /* Ponecháno flex-wrap, takže se na mobilu zalomí */
         gap: 1rem;
     }
     .partner-item {
-        flex-basis: 90%; /* Zvětšit na šířku */
-        max-width: 250px; /* Limit pro maximální šířku */
-        padding: 1.5rem;
+        flex-basis: 40%; /* Dvě loga vedle sebe */
+        padding: 1rem;
         height: 90px;
     }
     .partner-item img {
