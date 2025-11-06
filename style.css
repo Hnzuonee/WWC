@@ -72,13 +72,9 @@ h2.section-title {
     text-align: center;
     margin-bottom: 1.5rem;
     
-    /* --- ZMĚNA PRO CENTROVÁNÍ --- */
-    display: block;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    /* --- KONEC ZMĚNY --- */
+    /* --- OPRAVA CENTROVÁNÍ: Vráceno na inline-block --- */
+    display: inline-block;
+    /* Odstraněny přebíjející vlastnosti margin a width */
     
     padding-bottom: 8px;
     border-bottom: 3px solid;
@@ -572,14 +568,14 @@ a {
     }
     .navbar-logo {
         margin-bottom: 0.8rem;
-        display: none; /* <<< ZMĚNA: SKRYTÍ LOGA NA MOBILU */
+        display: none;
     }
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
     }
     .nav-menu li {
-        margin: 0.4rem 0.8rem; /* <<< ZMĚNA: VÍCE MÍSTA PRO 4 POLOŽKY */
+        margin: 0.4rem 0.6rem; /* <<< ZMĚNA: Snížení mezer, aby se vešly na 1 řádek */
     }
     
     #hero {
@@ -649,11 +645,10 @@ a {
         height: 150px;
     }
     .partners-grid {
-        /* Ponecháno flex-wrap, takže se na mobilu zalomí */
         gap: 1rem;
     }
     .partner-item {
-        flex-basis: 40%; /* Dvě loga vedle sebe */
+        flex-basis: 40%;
         padding: 1rem;
         height: 90px;
     }
